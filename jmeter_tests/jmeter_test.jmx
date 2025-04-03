@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+    <hashTree>
+        <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="N11 Search Load Test" enabled="true">
+            <stringProp name="TestPlan.comments">Load test for N11 search functionality</stringProp>
+            <hashTree>
+                <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="User Load Test" enabled="true">
+                    <stringProp name="ThreadGroup.num_threads">10</stringProp>
+                    <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+                    <stringProp name="ThreadGroup.duration">60</stringProp>
+                    <hashTree>
+                        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Search Request" enabled="true">
+                            <stringProp name="HTTPSampler.domain">www.n11.com</stringProp>
+                            <stringProp name="HTTPSampler.port">443</stringProp>
+                            <stringProp name="HTTPSampler.protocol">https</stringProp>
+                            <stringProp name="HTTPSampler.path">/arama?q=telefon</stringProp>
+                            <stringProp name="HTTPSampler.method">GET</stringProp>
+                        </HTTPSamplerProxy>
+                    </hashTree>
+                </ThreadGroup>
+            </hashTree>
+        </TestPlan>
+    </hashTree>
+</jmeterTestPlan>
